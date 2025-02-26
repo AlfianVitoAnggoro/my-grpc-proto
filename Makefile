@@ -82,8 +82,8 @@ build-gateway: clean-gateway protoc-go-gateway
 
 .PHONY: pipeline-init-gateway
 pipeline-init-gateway:
-	go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway@latest
-	go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2@latest
+	go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway@v2.17.1
+	go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2@v2.17.1
 
 
 .PHONY: pipeline-build-gateway
