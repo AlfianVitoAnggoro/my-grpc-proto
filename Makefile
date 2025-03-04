@@ -18,6 +18,7 @@ protoc-go:
 	--go-grpc_opt=module=${GO_MODULE} --go-grpc_out=. \
 	./proto/hello/*.proto ./proto/payment/*.proto ./proto/transaction/*.proto \
 	./proto/bank/*.proto ./proto/bank/type/*.proto \
+	./proto/resiliency/*.proto \
 
 .PHONY: build
 build: clean protoc-go
@@ -58,6 +59,7 @@ protoc-go-gateway:
 	--grpc-gateway_opt generate_unbound_methods=true \
 	./proto/hello/*.proto \
 	./proto/bank/*.proto ./proto/bank/type/*.proto \
+	./proto/resiliency/*.proto \
 
 
 .PHONY: protoc-openapiv2-gateway
@@ -70,6 +72,7 @@ protoc-openapiv2-gateway:
 	--openapiv2_opt merge_file_name=merged \
 	./proto/hello/*.proto \
 	./proto/bank/*.proto ./proto/bank/type/*.proto \
+	./proto/resiliency/*.proto \
 
 
 .PHONY: build-gateway
