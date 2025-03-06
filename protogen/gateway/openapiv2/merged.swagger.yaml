@@ -1,12 +1,15 @@
 swagger: '2.0'
 info:
-  title: proto/hello/hello.proto
-  version: version not set
+  title: Course - Protobuf & gRPC
+  version: 1.0.0
 tags:
-  - name: HelloService
-  - name: BankService
   - name: ResiliencyService
   - name: ResiliencyWithMetadataService
+  - name: HelloService
+  - name: BankService
+host: localhost:8081
+schemes:
+  - http
 consumes:
   - application/json
 produces:
@@ -632,20 +635,26 @@ definitions:
     properties:
       min_delay_second:
         type: integer
-        format: int32
+        format: integer
+        example: 2
+        description: Minimum delay in second (inclusive)
       max_delay_second:
         type: integer
-        format: int32
+        format: integer
+        example: 7
+        description: Maximum delay in second (inclusive)
       status_codes:
         type: array
         items:
           type: integer
           format: int64
+        description: Array of gRPC status codes to be generated (numeric)
   resiliencyResiliencyResponse:
     type: object
     properties:
       dummy_string:
         type: string
+        description: Dummy string for response
   rpcStatus:
     type: object
     properties:
